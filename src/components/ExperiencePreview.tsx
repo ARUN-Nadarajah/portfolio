@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+
 
 interface Experience {
   id: number;
@@ -7,7 +7,7 @@ interface Experience {
   company: string;
   duration: string;
   description: string;
-  url?: string; // Optional link, e.g. company site or LinkedIn
+  url?: string; 
 }
 
 export default function ExperiencePreview() {
