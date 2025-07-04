@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 const sections = [
-    { id: "about", label: "About Me" },
-    {id:"project-preview",label:"Project"},
-  { id: "contact", label: "Contact" },
+  { id: "about", label: "About Me" },
+  { id: "project", label: "Project" },
+  { id: "experience", label: "Experience" },
 ];
 
 export default function Navbar() {
@@ -17,11 +17,14 @@ export default function Navbar() {
           setActiveSection(visible.target.id);
         }
       },
-      { rootMargin: "-50% 0px -40% 0px", threshold: 0.1 }
+      {
+        rootMargin: "-50% 0px -40% 0px",
+        threshold: 0.1,
+      }
     );
 
-    sections.forEach((section) => {
-      const el = document.getElementById(section.id);
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
 

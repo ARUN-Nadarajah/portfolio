@@ -2,6 +2,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import Navbar from '../components/NavBar';
 import AboutMe from '../components/AboutMe';
 import ProjectPreview from '../components/ProjectPreview';
+import ExperiencePreview from '../components/ExperiencePreview';
 
 export default function SampleHomePage() {
   return (
@@ -31,11 +32,14 @@ export default function SampleHomePage() {
       </div>
 
       <div className="w-3/5 h-full overflow-y-auto pr-6 py-10 space-y-16 relative z-50 overflow-visible pl-10">
-        <section id="About">
+        <section id="about">
           <AboutMe/>
         </section>
-        <section id="project-preview">
+        <section id="project">
           <ProjectPreview />
+        </section>
+        <section id="experience">
+          <ExperiencePreview />
         </section>
       </div>
     </div>
