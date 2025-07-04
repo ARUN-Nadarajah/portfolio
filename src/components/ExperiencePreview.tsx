@@ -21,14 +21,7 @@ export default function ExperiencePreview() {
         "Managing budgeting, planning, and financial documentation for student community events and activities.",
       url: "https://www.linkedin.com/in/arunnadarajah2024",
     },
-    {
-      id: 2,
-      role: "Bachelor of IT Student",
-      company: "SLIIT",
-      duration: "2022 - Present",
-      description:
-        "Pursuing B.Sc. in Information Technology specializing in Software Engineering.",
-    },
+    
   ];
 
   const [hoveredId, setHoveredId] = useState<number | null>(null);
@@ -79,9 +72,6 @@ export default function ExperiencePreview() {
             </a>
           );
         })}
-        <Link to="/Experience" className="text-blue-400 underline">
-          View All Experience
-        </Link>
       </div>
     </section>
   );

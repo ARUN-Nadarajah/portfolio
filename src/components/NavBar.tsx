@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 const sections = [
   { id: "about", label: "About Me" },
   { id: "project", label: "Project" },
+  {id:"education",label:"Education"},
   { id: "experience", label: "Experience" },
+
 ];
 
 export default function Navbar() {

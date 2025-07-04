@@ -2,7 +2,7 @@ import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from "react-icons/fa";
 
 const socials = [
   {
-    href: "https://www.linkedin.com/in/YOUR_USERNAME",
+    href: "https://www.linkedin.com/in/arunnadarajah2024",
     Icon: FaLinkedin,
     hoverColor: "hover:text-blue-400",
   },
@@ -25,11 +25,11 @@ const socials = [
 
 export default function Sidebar() {
   return (
-    <div className="h-screen w-16 bg-gray-900 text-white flex flex-col items-center justify-between py-6 fixed left-0 top-0 shadow-lg">
-      {/* Top - Letter A */}
+    <div className="hidden md:flex h-screen w-16 bg-gray-900 text-white flex-col items-center justify-between py-6 fixed left-0 top-0 z-50">
+      {/* Top - Initial */}
       <div className="text-3xl font-bold">A</div>
 
-      {/* Bottom - Social Icons */}
+      {/* Social Icons */}
       <div className="flex flex-col gap-6">
         {socials.map(({ href, Icon, hoverColor }) => (
           <a
