@@ -30,18 +30,6 @@ This is my **personal developer portfolio**, built with **React**, **TailwindCSS
 - **GitHub API** for dynamic project fetching
 - **React Router** for page navigation
 
----
-
-## 📂 Folder Structure
-
--src/
--│
--├── components/        // Reusable UI components
--├── pages/             // Individual page components
--├── APIs/              // GitHub API integration
--├── assets/            // Images and icons
--├── App.tsx            // Main app structure
--└── main.tsx           // Entry point
 
 ---
 
