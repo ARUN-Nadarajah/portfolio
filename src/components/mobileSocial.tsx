@@ -4,35 +4,35 @@ const socials = [
   {
     href: "https://www.linkedin.com/in/arunnadarajah2024",
     Icon: FaLinkedin,
-    hoverColor: "hover:text-blue-400",
+    hoverColor: "hover:text-accent", // orange
   },
   {
-    href: "https://github.com/YOUR_USERNAME", // <-- update this
+    href: "https://github.com/ARUN-Nadarajah",
     Icon: FaGithub,
-    hoverColor: "hover:text-gray-300",
+    hoverColor: "hover:text-muted", // muted
   },
   {
-    href: "https://instagram.com/YOUR_USERNAME", // <-- update this
+    href: "https://www.instagram.com/nadarajah_arun/",
     Icon: FaInstagram,
-    hoverColor: "hover:text-pink-400",
+    hoverColor: "hover:text-pink-400", // optional: keep Tailwind pink
   },
   {
-    href: "https://facebook.com/YOUR_USERNAME", // <-- update this
+    href: "https://www.facebook.com/profile.php?id=100025937449274",
     Icon: FaFacebook,
-    hoverColor: "hover:text-blue-500",
+    hoverColor: "hover:text-blue-500", // optional: keep Tailwind blue
   },
 ];
 
 export default function MobileSocials() {
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-gray-900 border-t border-white/10 py-2 px-6 flex justify-around items-center md:hidden z-50">
+    <div className="fixed bottom-0 left-0 w-full bg-surface border-t border-muted/20 py-2 px-6 flex justify-around items-center md:hidden z-50">
       {socials.map(({ href, Icon, hoverColor }) => (
         <a
           key={href}
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-gray-400 transition-colors duration-300 text-2xl ${hoverColor}`}
+          className={`text-muted transition-colors duration-300 text-2xl ${hoverColor}`}
         >
           <Icon />
         </a>

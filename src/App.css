@@ -4,9 +4,6 @@
 
 html,
 body {
-  background-color: #111827; 
-  color: #E5E7EB;            
-  margin: 0;
-  padding: 0;
-  padding-left: 16px;
+  @apply bg-background text-foreground m-0 p-0;
+  padding-left: 1rem;
 }

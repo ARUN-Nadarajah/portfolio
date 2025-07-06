@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 const sections = [
   { id: "about", label: "About Me" },
   { id: "project", label: "Project" },
-  {id:"education",label:"Education"},
+  { id: "education", label: "Education" },
   { id: "experience", label: "Experience" },
-
 ];
 
 export default function Navbar() {
@@ -41,8 +40,8 @@ export default function Navbar() {
           href={`#${id}`}
           className={`text-lg font-medium transition duration-300 ${
             activeSection === id
-              ? "text-blue-400 underline underline-offset-4"
-              : "text-gray-500 hover:text-gray-300"
+              ? "text-accent underline underline-offset-4"
+              : "text-muted hover:text-text"
           }`}
         >
           {label}

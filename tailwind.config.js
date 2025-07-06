@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#F9FAFB',
-        primaryText: '#111827',
-        accentBlue: '#2563EB',
-        secondaryText: '#6B7280',
-        borderGray: '#E5E7EB',
+        background: "#0D1117",
+        surface: "#161B22",
+        foreground: "#E6EDF3",
+        muted: "#8B949E",
+        accent: "#58A6FF",
+        "accent-hover": "#1F6FEB",
+        secondary: "#D2A8FF",
       },
     },
   },
   plugins: [],
-  
-}
-
+};

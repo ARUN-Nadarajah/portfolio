@@ -21,18 +21,11 @@ export default function ProjectPreview() {
     },
     {
       id: 2,
-      name: "TreatBox - Online Bakery Shop",
+      name: "Product Store",
       description:
-        "A full-stack bakery e-commerce site built with React, TailwindCSS, Express, and MongoDB.",
-      url: "https://github.com/ARUN-Nadarajah/TreatBox",
-      techStack: [
-        "React",
-        "TailwindCSS",
-        "Express",
-        "MongoDB",
-        "Mongoose",
-        "Node.js",
-      ],
+        "A simple React and Node.js based e-commerce store with product browsing, cart management, and admin features.",
+      url: "https://github.com/ARUN-Nadarajah/Product-Store",
+      techStack: ["React", "TailwindCSS", "Express", "MongoDB", "Mongoose", "Node.js"],
     },
     {
       id: 3,
@@ -48,7 +41,7 @@ export default function ProjectPreview() {
 
   return (
     <section id="project-preview" className="mb-16">
-      <h2 className="text-3xl font-bold mb-6 text-white">Project Preview</h2>
+      <h2 className="text-3xl font-bold mb-6 text-text">Project Preview</h2>
       <div className="flex flex-col gap-6">
         {projects.map(({ id, name, description, url, techStack }) => {
           const isHovered = hoveredId === id;
@@ -63,44 +56,45 @@ export default function ProjectPreview() {
               onMouseEnter={() => setHoveredId(id)}
               onMouseLeave={() => setHoveredId(null)}
               className={`
-                  w-11/12 p-6 rounded-xl transition-all duration-300 ease-in-out transform
-                  flex flex-col cursor-pointer
-                  bg-gray-800 bg-opacity-30 border border-transparent
-                            
-                  ${
-                    isHovered
-                      ? "!scale-[1.01] !bg-white/10 !backdrop-blur-md !border !border-white/20 !shadow-blue-500 !shadow-lg !z-10 !opacity-100 !grayscale-0"
-                      : isAnotherHovered
-                      ? "!opacity-30 !grayscale"
-                      : "!opacity-70 grayscale-0 z-20"
-                  }
-                `}
+                w-11/12 p-6 rounded-xl transition-all duration-300 ease-in-out transform
+                flex flex-col cursor-pointer
+                bg-surface bg-opacity-90 border border-transparent
+                ${
+                  isHovered
+                    ? "scale-[1.01] bg-accent/20 backdrop-blur-md border border-accent/40 shadow-accent shadow-lg z-10 opacity-100 grayscale-0"
+                    : isAnotherHovered
+                    ? "opacity-30 grayscale"
+                    : "opacity-70 grayscale-0 z-20"
+                }
+              `}
             >
               <h3
                 className={`text-xl font-semibold mb-2 transition-colors duration-300 ${
-                  isHovered ? "text-blue-400" : "text-white"
+                  isHovered ? "text-accent" : "text-text"
                 }`}
               >
                 {name}
               </h3>
-              <p className="text-gray-300 mb-2">{description}</p>
-              <div className="flex flex-wrap gap-2 text-sm text-gray-400 mb-4">
+              <p className="text-muted mb-2">{description}</p>
+              <div className="flex flex-wrap gap-2 text-sm text-muted mb-4">
                 {techStack.map((tech, index) => (
                   <span
                     key={index}
-                    className="px-2 py-0.5 bg-gray-700 rounded-full text-gray-300"
+                    className="px-2 py-0.5 bg-surface rounded-full text-text"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-              <span className="mt-auto text-blue-400 underline">
+              <span className="mt-auto text-accent underline">
                 View Project
               </span>
             </a>
           );
         })}
-        <Link to="/Projects" className="text-blue-400 underline">View All Projects</Link>
+        <Link to="/Projects" className="text-accent underline">
+          View All Projects
+        </Link>
       </div>
     </section>
   );
