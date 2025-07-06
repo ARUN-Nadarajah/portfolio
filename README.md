@@ -34,14 +34,14 @@ This is my **personal developer portfolio**, built with **React**, **TailwindCSS
 
 ## 📂 Folder Structure
 
-src/
-│
-├── components/        // Reusable UI components
-├── pages/             // Individual page components
-├── APIs/              // GitHub API integration
-├── assets/            // Images and icons
-├── App.tsx            // Main app structure
-└── main.tsx           // Entry point
+-src/
+-│
+-├── components/        // Reusable UI components
+-├── pages/             // Individual page components
+-├── APIs/              // GitHub API integration
+-├── assets/            // Images and icons
+-├── App.tsx            // Main app structure
+-└── main.tsx           // Entry point
 
 ---
 
