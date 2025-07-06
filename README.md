@@ -40,11 +40,6 @@ This is my **personal developer portfolio**, built with **React**, **TailwindCSS
 - 🧠 Blog section (optional)
 - 🛒 More full-stack project previews
 
----
-
-## 📜 License
-
-This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
