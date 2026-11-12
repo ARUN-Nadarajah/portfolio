@@ -1,42 +1,53 @@
-import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from "react-icons/fa";
-
-const socials = [
-  {
-    href: "https://www.linkedin.com/in/arunnadarajah2024",
-    Icon: FaLinkedin,
-    hoverColor: "hover:text-accent", // orange
-  },
-  {
-    href: "https://github.com/ARUN-Nadarajah",
-    Icon: FaGithub,
-    hoverColor: "hover:text-muted", // muted
-  },
-  {
-    href: "https://www.instagram.com/nadarajah_arun/",
-    Icon: FaInstagram,
-    hoverColor: "hover:text-pink-400", // optional: keep Tailwind pink
-  },
-  {
-    href: "https://www.facebook.com/profile.php?id=100025937449274",
-    Icon: FaFacebook,
-    hoverColor: "hover:text-blue-500", // optional: keep Tailwind blue
-  },
-];
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Download, Mail } from "lucide-react";
+import { PROFILE } from "../data/portfolioData";
 
 export default function MobileSocials() {
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-surface border-t border-muted/20 py-2 px-6 flex justify-around items-center md:hidden z-50">
-      {socials.map(({ href, Icon, hoverColor }) => (
-        <a
-          key={href}
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`text-muted transition-colors duration-300 text-2xl ${hoverColor}`}
-        >
-          <Icon />
-        </a>
-      ))}
-    </div>
+    <nav
+      aria-label="Mobile quick actions"
+      className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-surface/95 backdrop-blur-md border-t border-border px-4 py-2.5 flex items-center justify-around"
+    >
+      <a
+        href={PROFILE.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+        className="flex flex-col items-center gap-0.5 text-muted hover:text-accent transition-colors text-xs"
+      >
+        <FaGithub className="w-5 h-5" aria-hidden="true" />
+        <span>GitHub</span>
+      </a>
+
+      <a
+        href={PROFILE.linkedinUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        className="flex flex-col items-center gap-0.5 text-muted hover:text-accent transition-colors text-xs"
+      >
+        <FaLinkedin className="w-5 h-5" aria-hidden="true" />
+        <span>LinkedIn</span>
+      </a>
+
+      <a
+        href={`mailto:${PROFILE.email}`}
+        aria-label="Email Arun Nadarajah"
+        className="flex flex-col items-center gap-0.5 text-muted hover:text-accent transition-colors text-xs"
+      >
+        <Mail className="w-5 h-5" aria-hidden="true" />
+        <span>Email</span>
+      </a>
+
+      <a
+        href={PROFILE.cvPath}
+        download={PROFILE.cvFileName}
+        aria-label="Download CV"
+        className="flex flex-col items-center gap-0.5 text-accent hover:text-foreground transition-colors text-xs font-medium"
+      >
+        <Download className="w-5 h-5" aria-hidden="true" />
+        <span>CV</span>
+      </a>
+    </nav>
   );
 }

@@ -2,8 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  @apply bg-background text-foreground m-0 p-0;
-  padding-left: 1rem;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    @apply bg-background text-foreground font-sans antialiased m-0 p-0;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-accent/25 text-foreground;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

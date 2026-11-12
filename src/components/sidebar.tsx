@@ -1,54 +1,56 @@
-import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Globe, Mail } from "lucide-react";
+import { PROFILE } from "../data/portfolioData";
 
 const socials = [
   {
-    href: "https://www.linkedin.com/in/arunnadarajah2024",
-    Icon: FaLinkedin,
-    hoverClass: "hover:text-accent",
-  },
-  {
-    href: "https://github.com/ARUN-Nadarajah",
+    href: PROFILE.githubUrl,
+    label: "GitHub profile",
     Icon: FaGithub,
-    hoverClass: "hover:text-muted",
+    external: true,
   },
   {
-    href: "https://www.instagram.com/nadarajah_arun/",
-    Icon: FaInstagram,
-    hoverClass: "hover:text-pink-400", // keep this if you want pink from default palette
+    href: PROFILE.linkedinUrl,
+    label: "LinkedIn profile",
+    Icon: FaLinkedin,
+    external: true,
   },
   {
-    href: "https://www.facebook.com/profile.php?id=100025937449274",
-    Icon: FaFacebook,
-    hoverClass: "hover:text-blue-500", // default Tailwind blue
+    href: `mailto:${PROFILE.email}`,
+    label: "Send email",
+    Icon: Mail,
+    external: false,
+  },
+  {
+    href: PROFILE.portfolioUrl,
+    label: "Live portfolio URL",
+    Icon: Globe,
+    external: true,
   },
 ];
 
 export default function Sidebar() {
   return (
-    <div className="hidden md:flex fixed left-0 top-0 z-50 h-screen w-16 bg-background text-text flex-col items-center justify-between py-6">
-     <motion.div
-  whileHover={{ rotate: 360 }}
-  transition={{ duration: 1, type: "spring" }}
-  className="text-3xl font-bold"
->
-  A
-</motion.div>
-
-      {/* Social Icons */}
-      <div className="flex flex-col gap-6">
-        {socials.map(({ href, Icon, hoverClass }) => (
+    <aside
+      aria-label="Quick social links"
+      className="hidden xl:flex fixed left-5 bottom-0 z-30 flex-col items-center gap-5"
+    >
+      <div className="flex flex-col items-center gap-4">
+        {socials.map(({ href, label, Icon, external }) => (
           <a
-            key={href}
+            key={label}
             href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`text-muted transform transition duration-300 ease-in-out hover:-translate-y-2 hover:scale-110 ${hoverClass}`}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noopener noreferrer" : undefined}
+            aria-label={label}
+            title={label}
+            className="p-2 rounded-lg text-muted hover:text-accent hover:-translate-y-0.5 transition-all duration-200"
           >
-            <Icon size={20} />
+            <Icon className="w-5 h-5" aria-hidden="true" />
           </a>
         ))}
       </div>
-    </div>
+      <div className="w-px h-24 bg-border" aria-hidden="true" />
+    </aside>
   );
 }

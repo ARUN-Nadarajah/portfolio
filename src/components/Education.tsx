@@ -1,57 +1,49 @@
+import { GraduationCap } from "lucide-react";
+import SectionHeading from "./SectionHeading";
+import { EDUCATION_ITEMS } from "../data/portfolioData";
+
 export default function EducationPreview() {
   return (
-    <div className="max-w-3xl">
-      <h2 className="text-3xl font-extrabold text-text mb-10">Education</h2>
+    <div className="py-16 border-b border-border/60">
+      <SectionHeading
+        index="05"
+        title="Education"
+        subtitle="Academic qualifications in Information Technology and English communication."
+      />
 
-      {/* SLIIT Degree */}
-      <div
-        className="
-          mb-10 p-6 rounded-xl
-          transition-all duration-300
-          hover:bg-accent/20 hover:backdrop-blur-md
-          hover:border hover:border-accent/40
-          cursor-pointer
-          bg-surface
-        "
-      >
-        <h3 className="text-xl font-semibold text-accent mb-1">
-          Bachelor of Science (B.Sc.) - Information Technology
-        </h3>
-        <p className="text-muted mb-1 font-medium">
-          Sri Lanka Institute of Information Technology (SLIIT)
-        </p>
-        <p className="text-muted mb-2 italic">Nov 2023 – Nov 2027 (Expected)</p>
-        <ul className="list-disc list-inside text-muted space-y-1">
-          <li>Academic Year 1, Semester 1 – GPA: 3.41</li>
-          <li>Academic Year 1, Semester 2 – GPA: 3.26</li>
-          <li>Cumulative GPA: 3.33</li>
-        </ul>
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {EDUCATION_ITEMS.map((item) => (
+          <article
+            key={`${item.degree}-${item.institution}`}
+            className="rounded-xl bg-surface border border-border p-6 flex flex-col justify-between hover:border-accent/40 transition-colors"
+          >
+            <div>
+              <div className="flex items-center justify-between gap-2 mb-4">
+                <div className="p-2 rounded-lg bg-background border border-border text-accent">
+                  <GraduationCap className="w-4 h-4" aria-hidden="true" />
+                </div>
+                {item.status && (
+                  <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-background border border-border text-muted">
+                    {item.status}
+                  </span>
+                )}
+              </div>
 
-      {/* ESOFT Metro Campus Diplomas */}
-      <div
-        className="
-          p-6 rounded-xl
-          transition-all duration-300
-          hover:bg-accent/20 hover:backdrop-blur-md
-          hover:border hover:border-accent/40
-          cursor-pointer
-          bg-surface
-        "
-      >
-        <h3 className="text-xl font-semibold text-accent mb-4">ESOFT Metro Campus</h3>
+              <h3 className="text-lg font-semibold text-foreground leading-snug">
+                {item.degree}
+              </h3>
 
-        <div className="mb-6">
-          <p className="text-text font-semibold mb-0">
-            Diploma of Education - Information Technology
-          </p>
-          <p className="text-muted italic">Feb 2023 – Feb 2024</p>
-        </div>
+              <p className="mt-2 text-sm font-medium text-accent">
+                {item.institution}
+                {item.location ? `, ${item.location}` : ""}
+              </p>
+            </div>
 
-        <div>
-          <p className="text-text font-semibold mb-0">Diploma of Education - English</p>
-          <p className="text-muted italic">Mar 2023 – Nov 2023</p>
-        </div>
+            <p className="mt-5 pt-4 border-t border-border/70 font-mono text-xs text-muted">
+              {item.period}
+            </p>
+          </article>
+        ))}
       </div>
     </div>
   );
