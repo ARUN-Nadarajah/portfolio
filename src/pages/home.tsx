@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <main
       id="main-content"
-      className="bg-background text-foreground min-h-screen"
+      className="bg-background text-foreground min-h-screen xl:pl-64"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <Hero />

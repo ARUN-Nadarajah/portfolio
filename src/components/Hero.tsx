@@ -5,10 +5,6 @@ import { PROFILE } from "../data/portfolioData";
 
 const highlights = [
   {
-    label: "Enterprise & Data",
-    value: "Infor Visual, MOPS, SQL & REST API Testing",
-  },
-  {
     label: "Web & Mobile Stack",
     value: "React, React Native, TypeScript, Node.js, MongoDB",
   },

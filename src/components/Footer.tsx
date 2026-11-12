@@ -3,7 +3,7 @@ import { PROFILE } from "../data/portfolioData";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border/70 bg-background pb-20 md:pb-0">
+    <footer className="border-t border-border/70 bg-background pb-20 md:pb-0 xl:pl-64">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-muted">
         <p>
           © {new Date().getFullYear()} {PROFILE.name}. Built with React, TypeScript &amp; Tailwind CSS.

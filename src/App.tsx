@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import AllProjectsPage from "./pages/Projects";
 import Navbar from "./components/NavBar";
 import Sidebar from "./components/sidebar";
+import SectionRail from "./components/SectionRail";
 import MobileSocials from "./components/mobileSocial";
 import Footer from "./components/Footer";
 import MouseLight from "./components/spotlight";
@@ -22,6 +23,7 @@ export default function App() {
         <MouseLight />
         <Navbar />
         <Sidebar />
+        <SectionRail />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<AllProjectsPage />} />

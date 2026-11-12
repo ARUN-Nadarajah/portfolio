@@ -3,7 +3,6 @@ import { ABOUT_PARAGRAPHS, PROFILE } from "../data/portfolioData";
 import { CheckCircle2 } from "lucide-react";
 
 const coreStrengths = [
-  "Enterprise software operations & data validation (Infor Visual, MOPS, SQL)",
   "REST API request & response testing with Postman",
   "Full-stack web & mobile development (React, React Native, TypeScript, Node.js)",
   "Collaborative troubleshooting across technical & business workflows",
